@@ -1,0 +1,10 @@
+.git
+.gitignore
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.zip
+.DS_Store
+evidence/*
