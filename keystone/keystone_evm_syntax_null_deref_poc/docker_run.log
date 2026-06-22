@@ -1,0 +1,2 @@
+$ docker run --rm real-vuln-poc:real_vulns-06_keystone_memory_corruption-keystone_fuzz_asm_evm_crash-b4c362243087a66c
+Setting KS_OPT_SYNTAX to 0x78
