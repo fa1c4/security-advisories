@@ -1,0 +1,1 @@
+COMMAND: docker run --rm real-vuln-poc:real_vulns-41_llvm_logic_invariant_assertion-llvm_llvm-dwarfdump-fuzzer_fatal-c724b957a3017253 /usr/lib/llvm-18/bin/llvm-dwarfdump /build/crash.bin

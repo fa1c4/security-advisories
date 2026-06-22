@@ -1,0 +1,24 @@
+LLVM ERROR: uleb128 too big for uint64
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace.
+Stack dump:
+0.	Program arguments: /usr/lib/llvm-18/bin/llvm-dwarfdump /build/crash.bin
+ #0 0x00007d9ddd3403bf llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0xda63bf)
+ #1 0x00007d9ddd33e4f9 llvm::sys::RunSignalHandlers() (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0xda44f9)
+ #2 0x00007d9ddd340b00 (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0xda6b00)
+ #3 0x00007d9ddc14c330 (/lib/x86_64-linux-gnu/libc.so.6+0x45330)
+ #4 0x00007d9ddc1a5b2c pthread_kill (/lib/x86_64-linux-gnu/libc.so.6+0x9eb2c)
+ #5 0x00007d9ddc14c27e raise (/lib/x86_64-linux-gnu/libc.so.6+0x4527e)
+ #6 0x00007d9ddc12f8ff abort (/lib/x86_64-linux-gnu/libc.so.6+0x288ff)
+ #7 0x00007d9ddd2980c2 llvm::report_fatal_error(llvm::Twine const&, bool) (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0xcfe0c2)
+ #8 0x00007d9ddd297efd (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0xcfdefd)
+ #9 0x00007d9ddeba4499 llvm::object::WasmObjectFile::WasmObjectFile(llvm::MemoryBufferRef, llvm::Error&) (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0x260a499)
+#10 0x00007d9ddeba3dd3 llvm::object::ObjectFile::createWasmObjectFile(llvm::MemoryBufferRef) (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0x2609dd3)
+#11 0x00007d9ddeb99f64 llvm::object::ObjectFile::createObjectFile(llvm::MemoryBufferRef, llvm::file_magic, bool) (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0x25fff64)
+#12 0x00007d9ddeb9e386 llvm::object::SymbolicFile::createSymbolicFile(llvm::MemoryBufferRef, llvm::file_magic, llvm::LLVMContext*, bool) (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0x2604386)
+#13 0x00007d9ddeb14073 llvm::object::createBinary(llvm::MemoryBufferRef, llvm::LLVMContext*, bool) (/usr/lib/llvm-18/bin/../lib/libLLVM.so.18.1+0x257a073)
+#14 0x00005c334fb9eefc (/usr/lib/llvm-18/bin/llvm-dwarfdump+0x1befc)
+#15 0x00005c334fb9b82e (/usr/lib/llvm-18/bin/llvm-dwarfdump+0x1882e)
+#16 0x00005c334fb9b406 (/usr/lib/llvm-18/bin/llvm-dwarfdump+0x18406)
+#17 0x00007d9ddc1311ca (/lib/x86_64-linux-gnu/libc.so.6+0x2a1ca)
+#18 0x00007d9ddc13128b __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28b)
+#19 0x00005c334fb8e7a5 (/usr/lib/llvm-18/bin/llvm-dwarfdump+0xb7a5)
