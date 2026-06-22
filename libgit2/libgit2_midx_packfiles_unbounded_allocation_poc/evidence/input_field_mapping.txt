@@ -1,0 +1,1 @@
+Fuzzer control bytes: offsets 0x00-0x03. MIDX begins at offset 0x04. packfiles field is bytes 0x0c-0x0f: cf 06 6a 75 (3473304181).

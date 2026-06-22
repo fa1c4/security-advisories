@@ -1,0 +1,58 @@
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.ubuntu.com>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+Breakpoint 1 at 0x931f4: file /build/libgit2/src/util/vector.c, line 108.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Parsing 185 bytes as MIDX...
+
+Breakpoint 1, git_vector_init (v=0x55555577d820, initial_size=3473304181, cmp=0x555555562180 <git__strcmp_cb>) at /build/libgit2/src/util/vector.c:108
+warning: 108	/build/libgit2/src/util/vector.c: No such file or directory
+#0  git_vector_init (v=0x55555577d820, initial_size=3473304181, cmp=0x555555562180 <git__strcmp_cb>) at /build/libgit2/src/util/vector.c:108
+No locals.
+#1  0x00005555555649a1 in midx_parse_packfile_names (idx=0x55555577d810, data=0x7ffff7fba000 "MIDX\001\001\001.\317\006juPNAM", packfiles=3473304181, chunk=0x7fffffffddf0) at /build/libgit2/src/libgit2/midx.c:66
+        error = 32767
+        i = 4294958464
+        packfile_name = 0x7ffff7fba024 "\377\377\377\377\001"
+        chunk_size = 125
+        len = 5728334368
+#2  0x00005555555652d0 in git_midx_parse (idx=0x55555577d810, data=0x7ffff7fba000 "MIDX\001\001\001.\317\006juPNAM", size=181) at /build/libgit2/src/libgit2/midx.c:267
+        hdr = 0x7ffff7fba000
+        chunk_hdr = 0x7ffff7fba018 "\377\377\377\177"
+        last_chunk = 0x7fffffffddf0
+        i = 1
+        last_chunk_offset = 36
+        chunk_offset = 36
+        trailer_offset = 161
+        checksum_size = 20
+        oid_size = 20
+        error = 0
+        chunk_packfile_names = {offset = 36, length = 125}
+        chunk_oid_fanout = {offset = 0, length = 0}
+        chunk_oid_lookup = {offset = 0, length = 0}
+        chunk_object_offsets = {offset = 0, length = 0}
+        chunk_object_large_offsets = {offset = 0, length = 0}
+        chunk_unknown = {offset = 0, length = 0}
+#3  0x0000555555565642 in git_midx_open (idx_out=0x7fffffffdf90, path=0x5555556f704e "/tmp/midx_poc.midx", oid_type=GIT_OID_SHA1) at /build/libgit2/src/libgit2/midx.c:334
+        idx = 0x55555577d810
+        fd = 3
+        idx_size = 181
+        st = {st_dev = 41, st_ino = 834539, st_nlink = 1, st_mode = 33204, st_uid = 1004, st_gid = 1004, __pad0 = 0, st_rdev = 0, st_size = 181, st_blksize = 4096, st_blocks = 8, st_atim = {tv_sec = 1782021623, tv_nsec = 830444439}, st_mtim = {tv_sec = 1782022214, tv_nsec = 543701468}, st_ctim = {tv_sec = 1782022214, tv_nsec = 543701468}, __glibc_reserved = {0, 0, 0}}
+        error = 0
+#4  0x000055555555b354 in main (argc=2, argv=0x7fffffffe0f8) at poc.c:47
+        f = 0x55555577d630
+        fsize = 185
+        data = 0x55555577e820 "\021"
+        tmpfile = 0x5555556f704e "/tmp/midx_poc.midx"
+        tmp = 0x55555577d630
+        idx = 0x0
+        oom_triggered = 0
+        error = 0
+#0  git_vector_init (v=0x55555577d820, initial_size=3473304181, cmp=0x555555562180 <git__strcmp_cb>) at /build/libgit2/src/util/vector.c:108
+108	in /build/libgit2/src/util/vector.c
+v = 0x55555577d820
+initial_size = 3473304181
+cmp = 0x555555562180 <git__strcmp_cb>
