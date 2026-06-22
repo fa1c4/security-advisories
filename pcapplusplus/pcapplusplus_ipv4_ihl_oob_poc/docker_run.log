@@ -1,0 +1,53 @@
+$ docker run --rm real-vuln-fix:real_vulns-01_pcapplusplus_memory_corruption-pcapplusplus
+=================================================================
+==1==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x50600000947c at pc 0x5595db826d49 bp 0x7ffc70d4b570 sp 0x7ffc70d4b560
+READ of size 2 at 0x50600000947c thread T0
+    #0 0x5595db826d48 in pcpp::computeChecksum(pcpp::ScalarBuffer<unsigned short>*, unsigned long) /src/PcapPlusPlus/Packet++/src/PacketUtils.cpp:23
+    #1 0x5595db7f44dc in pcpp::IPv4Layer::computeCalculateFields() /src/PcapPlusPlus/Packet++/src/IPv4Layer.cpp:413
+    #2 0x5595db80dfe5 in pcpp::Packet::computeCalculateFields() /src/PcapPlusPlus/Packet++/src/Packet.cpp:780
+    #3 0x5595db7f28ef in main /src/poc_reproducer.cpp:24
+    #4 0x77f5da123d8f  (/lib/x86_64-linux-gnu/libc.so.6+0x29d8f)
+    #5 0x77f5da123e3f in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x29e3f)
+    #6 0x5595db71c594 in _start (/src/poc_reproducer+0x102594)
+
+0x50600000947c is located 0 bytes to the right of 60-byte region [0x506000009440,0x50600000947c)
+allocated by thread T0 here:
+    #0 0x5595db7addb7 in operator new[](unsigned long) (/src/poc_reproducer+0x193db7)
+    #1 0x5595dbb2f5a5 in std::_MakeUniq<unsigned char []>::__array std::make_unique<unsigned char []>(unsigned long) /usr/include/c++/11/bits/unique_ptr.h:968
+    #2 0x5595dbb2f5a5 in pcpp::PcapFileReaderDevice::getNextPacket(pcpp::RawPacket&) /src/PcapPlusPlus/Pcap++/src/PcapFileDevice.cpp:475
+    #3 0x5595db7f29b4 in main /src/poc_reproducer.cpp:20
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /src/PcapPlusPlus/Packet++/src/PacketUtils.cpp:23 in pcpp::computeChecksum(pcpp::ScalarBuffer<unsigned short>*, unsigned long)
+Shadow bytes around the buggy address:
+  0x0a0c7fff9230: fa fa fa fa 00 00 00 00 00 00 00 fa fa fa fa fa
+  0x0a0c7fff9240: 00 00 00 00 00 00 00 fa fa fa fa fa 00 00 00 00
+  0x0a0c7fff9250: 00 00 00 fa fa fa fa fa 00 00 00 00 00 00 00 fa
+  0x0a0c7fff9260: fa fa fa fa 00 00 00 00 00 00 00 fa fa fa fa fa
+  0x0a0c7fff9270: 00 00 00 00 00 00 00 fa fa fa fa fa 00 00 00 00
+=>0x0a0c7fff9280: 00 00 00 fa fa fa fa fa 00 00 00 00 00 00 00[04]
+  0x0a0c7fff9290: fa fa fa fa 00 00 00 00 00 00 00 00 fa fa fa fa
+  0x0a0c7fff92a0: 00 00 00 00 00 00 00 00 fa fa fa fa 00 00 00 00
+  0x0a0c7fff92b0: 00 00 00 00 fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0a0c7fff92c0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0a0c7fff92d0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==1==ABORTING
