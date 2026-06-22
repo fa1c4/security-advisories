@@ -1,0 +1,10 @@
+$ docker run --rm real-vuln-poc:real_vulns-52_jsign_java_uncaught_exception-jsign_authenticodemsisignerfuzzer_negativearraysizeexception-f68e1e6c
+[VULNERABILITY CONFIRMED] NegativeArraySizeException triggered!
+Message: -535703600
+java.lang.NegativeArraySizeException: -535703600
+	at net.jsign.poi.poifs.storage.HeaderBlock.getBATArray(HeaderBlock.java:323)
+	at net.jsign.poi.poifs.filesystem.POIFSFileSystem.readCoreContents(POIFSFileSystem.java:395)
+	at net.jsign.poi.poifs.filesystem.POIFSFileSystem.<init>(POIFSFileSystem.java:273)
+	at net.jsign.poi.poifs.filesystem.POIFSFileSystem.<init>(POIFSFileSystem.java:183)
+	at net.jsign.msi.MSIFile.<init>(MSIFile.java:121)
+	at Poc.main(Poc.java:17)
