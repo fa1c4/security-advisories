@@ -1,0 +1,1 @@
+COMMAND: cd /tmp/codex-numactl-evidence.b7Gz5f && timeout --preserve-status 30s ./poc_reproducer

@@ -1,0 +1,38 @@
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.ubuntu.com>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+
+Program received signal SIGALRM, Alarm clock.
+0x0000555555559174 in _getbit (n=<optimized out>, bmp=<optimized out>) at libnuma.c:154
+warning: 154	libnuma.c: No such file or directory
+#0  0x0000555555559174 in _getbit (n=<optimized out>, bmp=<optimized out>) at libnuma.c:154
+No locals.
+#1  numa_bitmask_isbitset (i=<optimized out>, bmp=<optimized out>) at libnuma.c:174
+No locals.
+#2  __numa_parse_nodestring (s=0x555555564172 "y\266\004z\035\233\341\003\271", s@entry=0x555555564160 "1,1--0", '7' <repeats 11 times>, "}y\266\004z\035\233\341\003\271", allowed_nodes_ptr=0x555555562e60) at libnuma.c:2176
+        end2 = 0x555555564171 "}y\266\004z\035\233\341\003\271"
+        arg2 = 18446744065119617025
+        arg = 8105616876
+        i = <optimized out>
+        invert = 0
+        relative = 0
+        conf_nodes = 2
+        end = 0x555555564163 "--0", '7' <repeats 11 times>, "}y\266\004z\035\233\341\003\271"
+        mask = 0x555555564190
+#3  0x000055555555b5d0 in numa_parse_nodestring (s=s@entry=0x555555564160 "1,1--0", '7' <repeats 11 times>, "}y\266\004z\035\233\341\003\271") at libnuma.c:2208
+No locals.
+#4  0x0000555555557645 in main () at /src/poc_reproducer.c:64
+        f = <optimized out>
+        sz = <optimized out>
+        buf = 0x555555564160 "1,1--0", '7' <repeats 11 times>, "}y\266\004z\035\233\341\003\271"
+        end = 0x555555564171 "}y\266\004z\035\233\341\003\271"
+        val = 8589934591
+        truncated = 4294967295
+        nnodes = 2
+        pnodes = 1024
+        result = <optimized out>
