@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<phpbench>
+  <suite tag="attacker" date="2026-06-28" config-path="phpbench.json" uuid="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
+    <benchmark class="AttackerBenchmark"><subject name="bench"><variant revs="1" warmup="0" sleep="0" output-time-unit="microseconds" output-time-precision="3" output-mode="time" retry-threshold="0"><parameter-set name="evil"><parameter name="probe" type="serialized"><![CDATA[TzoyMToiUGhwQmVuY2hJbnZBdWRpdFByb2JlIjoxOntzOjc6Im1lc3NhZ2UiO3M6NTY6ImF0dGFja2VyLWNvbnRyb2xsZWQgc2VyaWFsaXplZCBvYmplY3QgZnJvbSBYTUwgcGFyYW1ldGVyIjt9]]></parameter></parameter-set></variant></subject></benchmark>
+  </suite>
+</phpbench>
