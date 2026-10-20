@@ -1,0 +1,15 @@
+# Downloaded candidate source and generated witness outputs.
+source/ngcc-harness/
+source/.ngcc-harness.*/
+**/third_party/
+**/reproduction.log
+**/build/
+**/build_*/
+**/build-*/
+**/logs/
+tools/ngcc_attack
+
+# Native witnesses produced outside a build directory.
+**/aigis_harness_*
+**/taichi1024_leak_harness
+**/taichi1024_alloc_failure_harness

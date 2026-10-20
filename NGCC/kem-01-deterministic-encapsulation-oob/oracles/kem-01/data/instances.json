@@ -1,0 +1,107 @@
+{
+  "Aigis-Enc+-I": {
+    "sources": [
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/cbd.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/fips202.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/poly.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/speed_test/cpucycles.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/reduce.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/precomp.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/ntt.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/polyvec.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/owcpa.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/kem.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/verify.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/hashkdf.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/gen_a.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/speed_test/speed_print.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/kat_test/auxfunc.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/kat_test/KEM_AlgorithmInstance.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/kat_test/drng.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/pack.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/kat_test/rng.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/kat_test/KAT_KEM.c"
+    ],
+    "includes": [
+      "Implementations/Reference_Implementation/Aigis-Enc+-I",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/kat_test",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/keccak4x",
+      "Implementations/Reference_Implementation/Aigis-Enc+-I/speed_test"
+    ],
+    "flags": [
+      "-march=native",
+      "-DPARAMS=1",
+      "-DUSE_NICCS_API"
+    ]
+  },
+  "Aigis-Enc+-II": {
+    "sources": [
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/cbd.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/fips202.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/poly.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/speed_test/cpucycles.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/reduce.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/precomp.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/ntt.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/polyvec.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/owcpa.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/kem.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/verify.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/hashkdf.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/gen_a.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/speed_test/speed_print.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/kat_test/auxfunc.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/kat_test/KEM_AlgorithmInstance.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/kat_test/drng.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/pack.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/kat_test/rng.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/kat_test/KAT_KEM.c"
+    ],
+    "includes": [
+      "Implementations/Reference_Implementation/Aigis-Enc+-II",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/kat_test",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/keccak4x",
+      "Implementations/Reference_Implementation/Aigis-Enc+-II/speed_test"
+    ],
+    "flags": [
+      "-march=native",
+      "-DPARAMS=2",
+      "-DUSE_NICCS_API"
+    ]
+  },
+  "Aigis-Enc+-III": {
+    "sources": [
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/cbd.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/fips202.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/poly.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/speed_test/cpucycles.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/reduce.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/precomp.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/ntt.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/polyvec.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/owcpa.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/kem.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/verify.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/hashkdf.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/gen_a.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/speed_test/speed_print.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/kat_test/auxfunc.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/kat_test/KEM_AlgorithmInstance.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/kat_test/drng.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/pack.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/kat_test/rng.c",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/kat_test/KAT_KEM.c"
+    ],
+    "includes": [
+      "Implementations/Reference_Implementation/Aigis-Enc+-III",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/kat_test",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/keccak4x",
+      "Implementations/Reference_Implementation/Aigis-Enc+-III/speed_test"
+    ],
+    "flags": [
+      "-march=native",
+      "-DPARAMS=3",
+      "-DUSE_NICCS_API"
+    ]
+  }
+}
