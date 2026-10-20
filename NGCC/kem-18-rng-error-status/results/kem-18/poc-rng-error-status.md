@@ -2,10 +2,11 @@
 
 Case ID: `kem-18-rng-error-status`. [Bug report](bug-report-rng-error-status.md).
 
-## Reproduce from the repository root
+## Reproduce from the NGCC package root
 
-```bash
-bash results/ngcc_119_source_audit/run_kem_rng_failure_probe.sh kem-18
+```sh
+source/download_targets.sh
+tools/reproduce.sh kem-18-rng-error-status
 ```
 
 Trigger: Return -1 from both DRNG requests after filling deterministic test bytes.
@@ -14,10 +15,4 @@ Expected observation: All four reference variants still report keygen status 0 a
 
 Control: The successful-RNG control has the same requested lengths; the stub isolates status propagation.
 
-The command exits successfully only when its probe's expected checks pass. To retain a consolidated command, status and full output log, run:
-
-```bash
-python3 results/ngcc_119_source_audit/reproduce_confirmed.py --case kem-18-rng-error-status
-```
-
-That command writes `results/kem-18/poc-logs/kem-18-rng-error-status.log`. The stub fills bytes before error; it does not model the contents of a real failed DRNG.
+The unified runner exits successfully only when the trigger and control checks pass. Its output is recorded in the Git-ignored `kem-18-rng-error-status/reproduction.log`. The stub fills bytes before error; it does not model the contents of a real failed DRNG.

@@ -8,11 +8,9 @@
 
 Pass two copies TPK_LEN bytes from m1 without validating m1_len_bytes.
 
-The broader investigation and variant details are in [the shared evidence report](bug-report-short-pass1.md).
-
 ## Reproduction
 
-Run the [dedicated PoC](poc-short-pass1.md). Trigger: Provide one byte as the first message to the reference K2S responder. Observed result: ASan heap-buffer-overflow at KEX_AlgorithmInstance.c:158. Control: A 615-byte message reaches the same copy without an ASan error.
+After the package runner has prepared the source link, run the [probe runner](run_short_pass1_probe.sh) with `pass1` from this bug package root: `bash results/kex-03/run_short_pass1_probe.sh pass1`. Trigger: Provide one byte as the first message to the reference K2S responder. Observed result: ASan heap-buffer-overflow at KEX_AlgorithmInstance.c:158. Control: A 615-byte message reaches the same copy without an ASan error.
 
 ## Scope and repair gate
 

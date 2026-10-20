@@ -32,7 +32,7 @@ pinned source or another dependency is unavailable, and another nonzero status
 for setup, source-identity, build, or reproduction failure. Inspect
 `reproduction.log` for the detailed probe output.
 
-The report's credit placeholder must be filled by the discoverer before
-posting the GitHub issue. No upstream vulnerability ID or acceptance is
-claimed. See [the report](report.md), [reproducer](poc.md), and
+The report credits fa1c4, University of Science and Technology of China.
+No upstream vulnerability ID or acceptance is claimed.
+See [the report](report.md), [reproducer](poc.md), and
 [source evidence](evidence.md).
